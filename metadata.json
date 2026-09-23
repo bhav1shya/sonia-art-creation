@@ -1,0 +1,6 @@
+{
+  "name": "Sonia Creations",
+  "description": "Premier art school and creative studio in Jaipur, Rajasthan offering painting, sketching, and artistic workshops.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

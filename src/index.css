@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-cream: #FAF6F0;
+    --color-cream-surface: #F4ECE1;
+    --color-terracotta: #C56345;
+    --color-terracotta-dark: #A84E33;
+    --color-teal: #265C5E;
+    --color-teal-dark: #1B4547;
+    --color-teal-light: #EBF3F3;
+    --color-lavender: #9E8FB2;
+    --color-lavender-soft: #F0EBF5;
+    --color-charcoal: #2D2A26;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--color-charcoal);
+    background-color: var(--color-cream);
+  }
+
+  h1, h2, h3, h4, .font-serif {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}
+
+/* Canvas linen texture overlay */
+.bg-canvas-texture {
+  background-color: #FAF6F0;
+  background-image: 
+    radial-gradient(rgba(45, 42, 38, 0.04) 1px, transparent 1px),
+    radial-gradient(rgba(197, 99, 69, 0.03) 1px, transparent 1px);
+  background-size: 24px 24px, 12px 12px;
+  background-position: 0 0, 12px 12px;
+}
+
+.bg-linen-subtle {
+  background-image: 
+    linear-gradient(rgba(45, 42, 38, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(45, 42, 38, 0.02) 1px, transparent 1px);
+  background-size: 8px 8px;
+}
+
+/* Brush stroke highlight effect */
+.brush-highlight {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.brush-highlight::before {
+  content: '';
+  position: absolute;
+  bottom: 0.15em;
+  left: -0.2em;
+  right: -0.2em;
+  height: 0.45em;
+  background: rgba(197, 99, 69, 0.22);
+  z-index: -1;
+  border-radius: 4px;
+  transform: rotate(-1deg) skew(-2deg);
+}
+
+.brush-highlight-teal::before {
+  background: rgba(38, 92, 94, 0.22);
+}
+
+.brush-highlight-lavender::before {
+  background: rgba(158, 143, 178, 0.28);
+}
+
+/* Smooth artwork shadow & frame */
+.art-canvas-frame {
+  box-shadow: 
+    0 10px 30px -10px rgba(45, 42, 38, 0.12),
+    0 2px 6px -1px rgba(45, 42, 38, 0.06),
+    inset 0 0 0 1px rgba(45, 42, 38, 0.08);
+}
+
+.art-canvas-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.art-canvas-hover:hover {
+  transform: translateY(-4px) scale(1.015);
+  box-shadow: 
+    0 20px 35px -10px rgba(45, 42, 38, 0.18),
+    0 8px 16px -4px rgba(197, 99, 69, 0.15),
+    inset 0 0 0 1px rgba(197, 99, 69, 0.2);
+}
